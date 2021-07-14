@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Spotify Login{% endblock %}
+{% block css %}{{url_for('static', filename='styles.css')}}{% endblock %}
+
+{% block content %}
+  <div class='logo-container'></div>
+
+    <div class='login-container'>
+      <form class='credential-container', method='POST'>
+        <input type='text' id='client_id' name='client_id' placeholder='client id'>
+        <input type='password' id='client_secret' name='client_secret' placeholder='client secret'>
+        <input type='submit' id='submit'>
+      </form>
+    </div>
+{% endblock %}

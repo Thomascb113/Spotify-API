@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Callback{% endblock %}
+
+{% block head %}
+	{{ JSGlue.include() }}
+{% endblock %}
+
+{% block content %}
+	<h1>Completed Authorization</h1>
+	<button id='submit' onclick='getParams()'>submit</button>
+{% endblock %}
+
+{% block script %}
+<script>
+	getParams();
+</script>
+{% endblock %}

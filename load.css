@@ -1,0 +1,97 @@
+html{
+	background: #030069;
+
+	--box-size: 400px;
+	--small-size: 15%;
+	--large-size: 100%;
+	--animation-start: 2s;
+}
+
+.box{
+	/*outline: 2px solid black;*/
+	margin: auto;
+	margin-top: 200px;
+	position: relative;
+	height: var(--box-size);
+	width: var(--box-size);
+}
+
+.center_ball{
+	background:  blue;
+	height: var(--large-size);
+	width: var(--large-size);
+	border-radius: 10em;
+	z-index: 1;
+}
+
+.center{
+	/*outline: 2px solid black;*/
+	height: var(--small-size);
+	width: var(--small-size);
+	position: absolute;
+	top: 43%; left: 43%;
+}
+
+.connect{
+	/*outline:  2px solid white;*/
+	position: absolute;
+	top:  43%;
+	height: var(--small-size);
+	width: var(--large-size);
+	z-index: -1;
+}
+
+div[name='connect_one']{
+	animation: rotate 10s infinite linear;
+}
+
+div[name='connect_two']{
+	animation: rotate 14s infinite linear;
+}
+
+div[name='connect_three']{
+	animation: rotate 18s infinite linear;
+}
+
+div[name='connect_four']{
+	animation: rotate 22s infinite linear;
+}
+
+.ball_one, .ball_two{
+	background: white;
+	height: var(--large-size);
+	width: var(--small-size);
+	border-radius: 10em;
+	display: inline-block;
+	position: absolute;
+	z-index: -1;
+
+	animation-delay:  var(--animation-start);
+}
+
+.ball_one{
+	animation: move_right 5s infinite ease-out;
+}
+
+.ball_two{
+	left:  340px;
+	animation: move_left 5s infinite ease-out;
+}
+
+@keyframes move_right{
+	20%, 100%{
+		transform: translateX(340px);
+	}
+}
+
+@keyframes move_left{
+	20%, 100%{
+		transform: translateX(-340px);
+	}
+}
+
+@keyframes rotate{
+	100%{
+		transform: rotate(359deg);
+	}
+}

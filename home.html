@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Home Page{% endblock %}
+
+{% block head %}
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='home.css')}}">
+{{ JSGlue.include() }}
+{% endblock %}
+
+{% block content %}
+	<div class="option-section" id="option-section">
+		<button class="devices" id="devices">D</button>
+		<ul class="device-options" id="device-options">
+		</ul>
+	</div>
+
+	<div class="music-section">
+		<div class="music-container" id="music-container">
+			<div class="music-image-container" id="music-image-container">
+	      		<img src="{{url_for('static', filename='images/record.jpeg')}}" id="music-image">
+	 		</div>
+	      	<h4 id="song-title">Song</h4>
+	    </div>
+	</div>
+
+	<div class="playlist-section">
+	    <div id="playlist-tab" class="playlist-tab">
+	    	<button id="playlist-button" class="playlist-button" onclick="refreshPlaylistResponse()">
+	    		<p>Playlist</p>
+	    	</button>
+	    	<div id="playlist-dropdown" class="playlist-dropdown">
+	    		<div id="tab-title" class="tab-title">
+	    			<!-- <button id="back-to-playlists" class="back-to-playlists">B</button> -->
+	    			<h4>My Playlists</h4>
+	    		</div>
+
+	    		<div id="list" class="playlists-list"></div>
+	    	</div>
+	    </div>
+	</div>
+{% endblock %}
+
+{% block script %}
+<script>
+
+</script>
+{% endblock %}
